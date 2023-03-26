@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/register.css}">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+</head>
+
+<body>
+
+<nav class="nav">
+    <section class="logo">
+        <a th:href="@{/home}">Bookworld</a>
+    </section>
+
+    <ul class="list">
+        <li >
+            <a th:href="@{/auth/login}">Login</a>
+        </li>
+        <li>
+            <a th:href="@{/auth/register}">Register</a>
+        </li>
+        <li>
+            <a href="">Logout</a>
+        </li>
+        <li>
+            <a th:href="@{/profile}">Profile</a>
+        </li>
+        <li>
+            <a href="">Books</a>
+        </li>
+        <li>
+            <a href="">Add Book</a>
+        </li>
+    </ul>
+</nav>
+
+<section class="container">
+
+
+    <section class="img-section">
+        <img th:src="@{/img/register.jpg}" alt="">
+
+
+    </section>
+
+    <form class="register-section">
+        <p class="header">Member Register</p>
+
+        <input  type="text" id="username" placeholder="username" name="username" required>
+
+        <input type="password" id="password" placeholder="password" name="password" required>
+
+        <input  type="text" id="email" placeholder="email" name="email" required>
+
+        <span class="names">
+                    <input  type="text" id="first-name" placeholder="firstName" name="firstName" required>
+
+                    <input  type="text" id="last-name" placeholder="lastName" name="lastName" required>
+                    </span>
+
+        <button type="submit" class="btn">Register</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+        </div>
+
+        <span class="registered">
+                <p>Already have an account?</p>
+                <a href="">Login here!</a>
+            </span>
+</form>
+</section>
+
+<footer>
+    <span>SoftUni Project 2023</span>
+    <span>For contacts: iskrata123@gmail.com</span>
+</footer>
+
+</body>
+</html>

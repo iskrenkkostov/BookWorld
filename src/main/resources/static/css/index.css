@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=IBM+Plex+Serif&display=swap');
+
+.nav {
+    background: #e0bba1;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo{
+    padding-top: 8px;
+
+}
+
+.logo a{
+    font-family: 'IBM+Plex+Serif', cursive;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 34px;
+    padding-top: 8px;
+    padding-left: 64px;
+    color: #52433c;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.logo a:hover{
+    font-family: 'Capriola', cursive;
+    font-size: 36px;
+    text-shadow: 0px 1px 5px black;
+    padding-bottom: 8px;
+    padding-left: 32px;
+    cursor: pointer;
+    letter-spacing: 3px;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 85%;
+    padding-right: 64px;
+    gap: 56px;
+}
+
+.list li{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+
+.list li a{
+    font-family: 'IBM+Plex+Serif', cursive;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+}
+
+.list li a:hover {
+    color: #52433c;
+
+}
+
+.list li:hover {
+    cursor: pointer;
+    color: #52433c;
+    text-shadow: 0px 0px 5px solid #52433c;
+    transform: scale(1.3);
+}
+
+.description {
+    max-width: 50%;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-desc {
+    border-radius: 50%;
+    /*background-color: #f4b870;*/
+    background-color: antiquewhite;
+    margin-top: 200px;
+    width: 500px;
+    height: 500px;
+    margin-left: 200px;
+    margin-right: 400px;
+    text-align: center;
+    align-items: end;
+    padding: 80px;
+    border: 2px solid #52433c;
+
+}
+
+h1{
+    font-family: 'IBM+Plex+Serif', cursive;
+    padding-bottom: 12px;
+    color: #52433c;
+}
+
+h3{
+    font-family: 'IBM+Plex+Serif', cursive;
+    color: #52433c;
+    font-size: 20px;
+    filter: blur(2px);
+    transition: 1s all;
+}
+
+h3:hover{
+    filter: blur(0);
+}
+
+.image-div {
+    max-height: 800px;
+}
+
+img{
+    height: 100%;
+}
+
+footer {
+    font-family: 'IBM+Plex+Serif', cursive;
+    background-color:  #e0bba1;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 64px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer span {
+    font-weight: bold;
+}

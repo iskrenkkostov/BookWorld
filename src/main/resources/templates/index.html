@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href = "@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+</head>
+<body>
+
+<nav class="nav">
+    <section class="logo">
+        <a th:href="@{/home}">Bookworld</a>
+    </section>
+
+    <ul class="list">
+        <li >
+            <a th:href="@{/auth/login}">Login</a>
+        </li>
+        <li>
+            <a th:href="@{/auth/register}">Register</a>
+        </li>
+        <li>
+            <a href="">Logout</a>
+        </li>
+        <li>
+            <a th:href="@{/profile}">Profile</a>
+        </li>
+        <li>
+            <a href="">Books</a>
+        </li>
+        <li>
+            <a href="">Add Book</a>
+        </li>
+    </ul>
+</nav>
+
+<main>
+    <div class="description">
+        <div class="main-desc">
+            <h1>Welcome to BOOKWORLD!</h1>
+
+
+            <h3>Bookworld is an online book store where you can buy books from all around the world on good prices.
+                Connect with other people like you and start looking for the best books for you. Here you can find all.
+                Enjoy your adventure here and let books make your world better!
+            </h3>
+
+        </div>
+    </div>
+
+    <div class="image-div" >
+        <img th:src="@{/img/index.jpg}" alt="">
+    </div>
+</main>
+
+<footer>
+    <span>SoftUni Project 2023</span>
+    <span>For contacts: iskrata123@gmail.com</span>
+</footer>
+
+</body>
+</html>

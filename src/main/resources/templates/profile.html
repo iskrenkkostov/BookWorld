@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/profile.css}">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <script src="https://kit.fontawesome.com/247a7612f3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="nav">
+    <section class="logo">
+        <a th:href="@{/home}">Bookworld</a>
+    </section>
+
+    <ul class="list">
+        <li >
+            <a th:href="@{/auth/login}">Login</a>
+        </li>
+        <li>
+            <a th:href="@{/auth/register}">Register</a>
+        </li>
+        <li>
+            <a href="">Logout</a>
+        </li>
+        <li>
+            <a th:href="@{/profile}">Profile</a>
+        </li>
+        <li>
+            <a href="">Books</a>
+        </li>
+        <li>
+            <a href="">Add Book</a>
+        </li>
+    </ul>
+</nav>
+
+<section class="card">
+    <section class="upper">
+        <section class="profile-image">
+            <img th:src="@{/img/profile.jpg}" alt="">
+        </section>
+    </section>
+    <section class="main">
+                <span class="info">
+                <h1>Iskren Kostov</h1>
+                <h4>iskrata123@gmail.com</h4>
+                <p>Adventurer and roman lover. If you want to trade books with me, private message me on my email.</p>
+                </span>
+
+        <span class="media">
+                <a href="https://www.facebook.com/voidler/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/iskrenkkostov/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC8Q8-QarVw6ilANQt9VUAFg" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </span>
+
+    </section>
+</section>
+
+<footer>
+    <span>SoftUni Project 2023</span>
+    <span>For contacts: iskrata123@gmail.com</span>
+</footer>
+
+</body>
+</html>
