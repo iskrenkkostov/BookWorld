@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/all-books.css}">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+</head>
+<body>
+<nav class="nav">
+    <section class="logo">
+        <a th:href="@{/home}">Bookworld</a>
+    </section>
+
+    <ul class="list">
+        <li >
+            <a th:href="@{/auth/login}">Login</a>
+        </li>
+        <li>
+            <a th:href="@{/auth/register}">Register</a>
+        </li>
+        <li>
+            <a href="">Logout</a>
+        </li>
+        <li>
+            <a th:href="@{/profile}">Profile</a>
+        </li>
+        <li>
+            <a th:href="@{/books/getAll}">Books</a>
+        </li>
+        <li>
+            <a th:href="@{/books/create}">Add Book</a>
+        </li>
+    </ul>
+</nav>
+
+
+<ul class="book-list">
+    <li>
+        <p>Title: Fairy tales</p>
+        <p>Genre: Romance</p>
+        <p>Author: Hans Christian Andersen</p>
+        <p>Price: 12.80 $</p>
+        <span class="buttons">
+                        <button class="buy-btn btn">Buy</button>
+                        <button class="delete-btn btn">Delete</button>
+                        </span>
+    </li>
+
+    <li>
+        <p>Title: One Thousand and One Nights</p>
+        <p>Genre: Tales</p>
+        <p>Author: Unknown</p>
+        <p>Price: 15.20 $</p>
+        <span class="buttons">
+                        <button class="buy-btn btn">Buy</button>
+                        <button class="delete-btn btn">Delete</button>
+                        </span>
+    </li>
+
+    <li>
+        <p>Title: Pride and Prejudice</p>
+        <p>Genre: Romance</p>
+        <p>Author: Jane Austen</p>
+        <p>Price: 13.40 $</p>
+        <span class="buttons">
+                        <button class="buy-btn btn">Buy</button>
+                        <button class="delete-btn btn">Delete</button>
+                        </span>
+    </li>
+
+    <li>
+        <p>Title: The Stranger</p>
+        <p>Genre: Mystery</p>
+        <p>Author: Albert Camus</p>
+        <p>Price: 13.90 $</p>
+        <span class="buttons">
+                        <button class="btn">Buy</button>
+                        <button class="btn">Delete</button>
+                        </span>
+    </li>
+
+    <li>
+        <p>Title: Journey to the End of the Night</p>
+        <p>Genre: Action</p>
+        <p>Author: Louis-Ferdinand</p>
+        <p>Price: 17.00 $</p>
+        <span class="buttons">
+                        <button class="buy-btn btn">Buy</button>
+                        <button class="delete-btn btn">Delete</button>
+                        </span>
+    </li>
+
+    <li>
+        <p>Title: Don Quijote De La Mancha</p>
+        <p>Genre: Adventure</p>
+        <p>Author: Miguel de Cervantes</p>
+        <p>Price: 16.60 $</p>
+        <span class="buttons">
+                        <button class="buy-btn btn">Buy</button>
+                        <button class="delete-btn btn">Delete</button>
+                        </span>
+    </li>
+</ul>
+
+
+
+
+
+<footer>
+    <span>SoftUni Project 2023</span>
+    <span>For contacts: iskrata123@gmail.com</span>
+</footer>
+
+</body>
+</html>
