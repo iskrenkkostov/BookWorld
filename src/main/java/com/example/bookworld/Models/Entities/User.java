@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -32,9 +33,8 @@ public class User extends BaseEntity{
     @Column
     private String description;
 
-    @ManyToOne
-    @NotNull
-    private Role role;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Role> roles;
 
     @OneToMany(mappedBy = "seller")
     private List<Book> booksToSell;
@@ -43,6 +43,21 @@ public class User extends BaseEntity{
     private List<Book> boughtBooks;
 
     public User() {
+    }
+
+    public User(String firstName, String lastName, String username, String password, String email, String description, Set<Role> roles, List<Book> booksToSell, List<Book> boughtBooks) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.description = description;
+        this.roles = roles;
+        this.booksToSell = booksToSell;
+        this.boughtBooks = boughtBooks;
+    }
+
+    public User(String username, String password, Role role) {
     }
 
     public String getFirstName() {
@@ -107,5 +122,13 @@ public class User extends BaseEntity{
 
     public void setBoughtBooks(List<Book> boughtBooks) {
         this.boughtBooks = boughtBooks;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }

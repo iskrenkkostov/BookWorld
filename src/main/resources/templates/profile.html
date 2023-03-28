@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,26 +12,30 @@
 <body>
 <nav class="nav">
     <section class="logo">
-        <a th:href="@{/home}">Bookworld</a>
+        <a th:href="@{/}">Bookworld</a>
     </section>
 
     <ul class="list">
-        <li >
+        <li sec:authorize="isAnonymous()">
             <a th:href="@{/auth/login}">Login</a>
         </li>
-        <li>
+        <li sec:authorize="isAnonymous()">
             <a th:href="@{/auth/register}">Register</a>
         </li>
-        <li>
-            <a href="">Logout</a>
+        <li sec:authorize="isAuthenticated()">
+            <form
+                    th:method="post"
+                    th:action="@{/auth/logout}">
+                <input id="logout-btn" type="submit" value="Logout">
+            </form>
         </li>
-        <li>
+        <li sec:authorize="isAuthenticated()">
             <a th:href="@{/profile}">Profile</a>
         </li>
         <li>
             <a th:href="@{/books/getAll}">Books</a>
         </li>
-        <li>
+        <li sec:authorize="isAuthenticated()">
             <a th:href="@{/books/create}">Add Book</a>
         </li>
     </ul>
@@ -40,7 +44,7 @@
 <section class="card">
     <section class="upper">
         <section class="profile-image">
-            <img th:src="@{/img/profile.jpg}" alt="">
+            <img th:src="@{/images/profile.jpg}" alt="">
         </section>
     </section>
     <section class="main">
