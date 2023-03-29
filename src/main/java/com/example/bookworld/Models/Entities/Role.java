@@ -5,6 +5,8 @@ import com.example.bookworld.Models.Enums.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
+import java.util.List;
+
 @Entity
 @Table(name = "roles")
 public class Role extends BaseEntity{
@@ -41,4 +43,7 @@ public class Role extends BaseEntity{
     public void setDescription(String description) {
         this.description = description;
     }
+
+
+
 }

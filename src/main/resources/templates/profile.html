@@ -48,10 +48,10 @@
         </section>
     </section>
     <section class="main">
-                <span class="info">
-                <h1>Iskren Kostov</h1>
-                <h4>iskrata123@gmail.com</h4>
-                <p>Adventurer and roman lover. If you want to trade books with me, private message me on my email.</p>
+                <span class="info" th:object="${user}">
+                <h1 th:text="*{fullName}"></h1>
+                <h4 th:text="*{email}"></h4>
+                <p th:text="*{description}"></p>
                 </span>
 
         <span class="media">

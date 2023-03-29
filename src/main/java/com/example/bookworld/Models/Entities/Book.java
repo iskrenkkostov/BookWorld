@@ -1,5 +1,6 @@
 package com.example.bookworld.Models.Entities;
 
+import com.example.bookworld.Models.Enums.GenreType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
@@ -17,13 +18,17 @@ public class Book extends BaseEntity{
     @ManyToOne
     private Author author;
 
-    @Column()
+    @Column(precision = 10)
     @NotNull
     private double price;
 
     @ManyToOne
     @NotNull
     private Condition condition;
+
+    @ManyToOne()
+    @NotNull
+    private Genre genre;
 
     @ManyToOne
     private User seller;
@@ -64,6 +69,14 @@ public class Book extends BaseEntity{
 
     public void setCondition(Condition condition) {
         this.condition = condition;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 
     public User getSeller() {

@@ -51,7 +51,7 @@
 
     </section>
 
-    <form class="register-section">
+    <form class="register-section" th:method="Post" th:action="@{/auth/register}">
         <p class="header">Member Register</p>
 
         <input  type="text" id="username" placeholder="username" name="username" required>
@@ -60,6 +60,9 @@
 
         <input  type="text" id="email" placeholder="email" name="email" required>
 
+        <input  type="text" id="desc" placeholder="description" name="description" required>
+
+
         <span class="names">
                     <input  type="text" id="first-name" placeholder="firstName" name="firstName" required>
 
@@ -67,14 +70,11 @@
                     </span>
 
         <button type="submit" class="btn">Register</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
         </div>
 
         <span class="registered">
                 <p>Already have an account?</p>
-                <a href="">Login here!</a>
+                <a th:href="@{/auth/login}">Login here!</a>
             </span>
 </form>
 </section>

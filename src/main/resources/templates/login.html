@@ -60,6 +60,7 @@
             <input type="password" id="password" placeholder="password" name="password" required>
         </div>
 
+
         <button type="submit" class="btn">Login</button>
         <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -68,7 +69,7 @@
 
         <span class="registered">
                 <p>Don't have an account?</p>
-                <a href="">Register here!</a>
+                <a th:href="@{/auth/register}">Register here!</a>
 
               </span>
 </form>

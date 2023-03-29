@@ -95,7 +95,7 @@ body {
 
 .form-book{
     position: absolute;
-    height: 650px;
+    height: 700px;
     width: 450px;
     top: 50%;
     right: 50%;
@@ -143,6 +143,16 @@ label{
 }
 
 #genres{
+    width: 70%;
+    align-self: center;
+    margin-bottom: 36px;
+    border: none;
+    height: 36px;
+    background-color: antiquewhite;
+    border-radius: 12px;
+}
+
+#conditions{
     width: 70%;
     align-self: center;
     margin-bottom: 36px;

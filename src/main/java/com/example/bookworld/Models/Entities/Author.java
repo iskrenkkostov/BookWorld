@@ -7,6 +7,7 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -28,6 +29,13 @@ public class Author extends BaseEntity{
     private List<Book> books;
 
     public Author() {
+    }
+
+    public Author(String name, String country, LocalDate birthDate, List<Book> books) {
+        this.name = name;
+        this.country = country;
+        this.birthDate = birthDate;
+        this.books = books;
     }
 
     public String getName() {

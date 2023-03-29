@@ -34,7 +34,7 @@ public class User extends BaseEntity{
     private String description;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    private Set<Role> roles;
+    private List<Role> roles;
 
     @OneToMany(mappedBy = "seller")
     private List<Book> booksToSell;
@@ -45,7 +45,7 @@ public class User extends BaseEntity{
     public User() {
     }
 
-    public User(String firstName, String lastName, String username, String password, String email, String description, Set<Role> roles, List<Book> booksToSell, List<Book> boughtBooks) {
+    public User(String firstName, String lastName, String username, String password, String email, String description, List<Role> roles, List<Book> booksToSell, List<Book> boughtBooks) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -124,11 +124,11 @@ public class User extends BaseEntity{
         this.boughtBooks = boughtBooks;
     }
 
-    public Set<Role> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 }

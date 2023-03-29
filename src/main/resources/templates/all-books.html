@@ -40,78 +40,20 @@
     </ul>
 </nav>
 
-
-<ul class="book-list">
+<div class="container">
+<ul class="book-list" th:each="book: ${books}">
     <li>
-        <p>Title: Fairy tales</p>
-        <p>Genre: Romance</p>
-        <p>Author: Hans Christian Andersen</p>
-        <p>Price: 12.80 $</p>
-        <span class="buttons">
+        <p th:text="${'Title: ' + book.name}" th:value="${book.name}"></p>
+        <p th:text="${'Genre: ' + book.genre.name}" th:value="${book.genre.name}"></p>
+        <p th:text="${'Title: ' + book.author.name}" th:value="${book.author.name}"></p>
+        <p th:text="${'Price: ' + book.price + ' $'}" th:value="${book.price}"></p>
+        <span class="buttons" sec:authorize="isAuthenticated()">
                         <button class="buy-btn btn">Buy</button>
-                        <button class="delete-btn btn">Delete</button>
-                        </span>
-    </li>
-
-    <li>
-        <p>Title: One Thousand and One Nights</p>
-        <p>Genre: Tales</p>
-        <p>Author: Unknown</p>
-        <p>Price: 15.20 $</p>
-        <span class="buttons">
-                        <button class="buy-btn btn">Buy</button>
-                        <button class="delete-btn btn">Delete</button>
-                        </span>
-    </li>
-
-    <li>
-        <p>Title: Pride and Prejudice</p>
-        <p>Genre: Romance</p>
-        <p>Author: Jane Austen</p>
-        <p>Price: 13.40 $</p>
-        <span class="buttons">
-                        <button class="buy-btn btn">Buy</button>
-                        <button class="delete-btn btn">Delete</button>
-                        </span>
-    </li>
-
-    <li>
-        <p>Title: The Stranger</p>
-        <p>Genre: Mystery</p>
-        <p>Author: Albert Camus</p>
-        <p>Price: 13.90 $</p>
-        <span class="buttons">
-                        <button class="btn">Buy</button>
-                        <button class="btn">Delete</button>
-                        </span>
-    </li>
-
-    <li>
-        <p>Title: Journey to the End of the Night</p>
-        <p>Genre: Action</p>
-        <p>Author: Louis-Ferdinand</p>
-        <p>Price: 17.00 $</p>
-        <span class="buttons">
-                        <button class="buy-btn btn">Buy</button>
-                        <button class="delete-btn btn">Delete</button>
-                        </span>
-    </li>
-
-    <li>
-        <p>Title: Don Quijote De La Mancha</p>
-        <p>Genre: Adventure</p>
-        <p>Author: Miguel de Cervantes</p>
-        <p>Price: 16.60 $</p>
-        <span class="buttons">
-                        <button class="buy-btn btn">Buy</button>
-                        <button class="delete-btn btn">Delete</button>
+                        <button class="delete-btn btn" sec:authorize="hasRole('ADMIN')">Delete</button>
                         </span>
     </li>
 </ul>
-
-
-
-
+</div>
 
 <footer>
     <span>SoftUni Project 2023</span>
