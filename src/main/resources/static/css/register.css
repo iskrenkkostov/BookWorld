@@ -153,7 +153,7 @@ img{
     font-family: 'IBM+Plex+Serif', cursive;
     border: none;
     width: 60%;
-    height: 56px;
+    height: 36px;
     border-radius: 30px;
     align-self: center;
     /*background-color: rgb(226, 219, 219);*/
@@ -168,7 +168,7 @@ img{
     font-family: 'IBM+Plex+Serif', cursive;
     border: none;
     width: 60%;
-    height: 56px;
+    height: 36px;
     border-radius: 30px;
     align-self: center;
     background-color: #ffe7d9;
@@ -181,7 +181,7 @@ img{
     font-family: 'IBM+Plex+Serif', cursive;
     border: none;
     width: 60%;
-    height: 56px;
+    height: 36px;
     border-radius: 30px;
     align-self: center;
     background-color: #ffe7d9;
@@ -193,15 +193,21 @@ img{
 .names{
     font-family: 'IBM+Plex+Serif', cursive;
     display: flex;
-    flex-direction: row;
-    gap: 16px;
+    flex-direction: column;
+    gap: 12px;
     padding: 0px 16px;
+}
+
+small{
+    color: red;
+    height: auto;
+    max-height: 10px;
 }
 
 #first-name{
     border: none;
     width: 60%;
-    height: 56px;
+    height: 36px;
     border-radius: 30px;
     align-self: center;
     background-color: #ffe7d9;
@@ -213,7 +219,7 @@ img{
 #last-name{
     border: none;
     width: 60%;
-    height: 56px;
+    height: 36px;
     border-radius: 30px;
     align-self: center;
     background-color: #ffe7d9;
@@ -226,7 +232,7 @@ img{
     font-family: 'IBM+Plex+Serif', cursive;
     border: none;
     width: 80%;
-    height: 102px;
+    height: 56px;
     border-radius: 30px;
     align-self: center;
     background-color: #ffe7d9;

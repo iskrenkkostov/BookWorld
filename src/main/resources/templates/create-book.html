@@ -45,12 +45,15 @@
         <p class="header">Create Book</p>
 
         <label for="title">Title</label>
+        <small th:if="${#fields.hasErrors('name')}" class="text-danger">Name must have at least 3 symbols</small>
         <input  type="text" id="title" name="name" required>
 
         <label for="author">Author</label>
+        <small th:if="${#fields.hasErrors('author')}" class="text-danger">Author must have at least 5 symbols</small>
         <input type="text" id="author" name="author" required>
 
         <label for="price">Price</label>
+        <small th:if="${#fields.hasErrors('price')}" class="text-danger">Price can not be lower than 5$</small>
         <input type="number" id="price"  name="price" required min="0.00" max="10000.00" step="0.01" />
 
         <label for="genres">Genre</label>

@@ -51,23 +51,34 @@
 
     </section>
 
-    <form class="register-section" th:method="Post" th:action="@{/auth/register}">
+    <form class="register-section" th:method="Post" th:action="@{/auth/register}" th:object="${registerModel}">
         <p class="header">Member Register</p>
 
-        <input  type="text" id="username" placeholder="username" name="username" required>
+        <small th:if="${#fields.hasErrors('username')}" class="text-danger">Username must have at least 3 symbols</small>
+        <input  type="text" th:errorclass="'is-invalid alert-danger'" id="username" placeholder="username" name="username" required>
 
+        <small th:if="${#fields.hasErrors('password')}" class="text-danger">Password must have at least 3 symbols</small>
         <input type="password" id="password" placeholder="password" name="password" required>
 
+        <small th:if="${#fields.hasErrors('email')}" class="text-danger">Invalid email address</small>
         <input  type="text" id="email" placeholder="email" name="email" required>
 
+        <small th:if="${#fields.hasErrors('description')}" class="text-danger">Description must have at least 10 symbols</small>
         <input  type="text" id="desc" placeholder="description" name="description" required>
 
 
         <span class="names">
+            <div>
+            <small th:if="${#fields.hasErrors('firstName')}" class="text-danger">First name must have at least 2 symbols</small>
                     <input  type="text" id="first-name" placeholder="firstName" name="firstName" required>
+                </div>
 
+            <div>
+            <small th:if="${#fields.hasErrors('lastName')}" class="text-danger">Last name must have at least 2 symbols</small>
                     <input  type="text" id="last-name" placeholder="lastName" name="lastName" required>
+                </div>
                     </span>
+
 
         <button type="submit" class="btn">Register</button>
         </div>

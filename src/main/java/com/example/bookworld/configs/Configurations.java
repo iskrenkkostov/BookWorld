@@ -36,10 +36,11 @@ public class Configurations {
         httpSecurity.
                 authorizeHttpRequests().
                 requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().
-                requestMatchers("/", "/books/getAll").permitAll().
+                requestMatchers("/", "/books/{id}/details").permitAll().
                 requestMatchers("/auth/register", "/auth/login", "/auth/login/error").anonymous().
-        // requestMatchers("/books/create").hasRole("ADMIN").
-                requestMatchers("/profile").authenticated().
+                requestMatchers("/books/{id}/delete", "/books/edit/{id}").hasRole("ADMIN").
+                requestMatchers("/profile", "/books/{id}/buy", "/books/getAll", "/profile/myBooks").authenticated().
+              //  requestMatchers("/books/{id}/details").authenticated().
                 requestMatchers("/books/create").authenticated().
                // anyRequest().authenticated().
         and()

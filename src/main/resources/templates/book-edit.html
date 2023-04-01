@@ -2,12 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" th:href="@{/css/profile.css}">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/book-edit.css}">
     <link rel="stylesheet" th:href="@{/css/reset.css}">
-    <script src="https://kit.fontawesome.com/247a7612f3.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="nav">
@@ -41,28 +38,28 @@
     </ul>
 </nav>
 
-<section class="card">
-    <section class="upper">
-        <section class="profile-image">
-            <img th:src="@{/images/profile.jpg}" alt="">
-        </section>
-    </section>
-    <section class="main">
-                <span class="info" th:object="${user}">
-                <h1 th:text="*{fullName}"></h1>
-                <h4 th:text="*{email}"></h4>
-                <p th:text="*{description}"></p>
-                    <a th:href="@{profile/myBooks}" class="sell-books">My Books for Selling</a>
-                </span>
+<section class="edit-book">
+    <section class="container">
+    <form th:method="Post" th:action="@{/books/edit/{id} (id=*{book.id})}" >
+        <p class="header">Edit Author</p>
 
-        <span class="media">
-                <a href="https://www.facebook.com/voidler/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/iskrenkkostov/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UC8Q8-QarVw6ilANQt9VUAFg" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            </span>
 
+        <div class="country">
+        <label for="country">Country</label>
+        <input  type="text" id="country" name="country" required>
+        </div>
+
+        <div class="birth-date">
+        <label for="birth-date">Birth Date</label>
+        <input type="text" id="birth-date" name="birthDate" required>
+        </div>
+
+        <button type="submit" class="btn">Edit Book</button>
+
+    </form>
     </section>
 </section>
+
 
 <footer>
     <span>SoftUni Project 2023</span>

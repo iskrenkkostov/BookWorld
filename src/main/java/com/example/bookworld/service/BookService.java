@@ -2,6 +2,7 @@ package com.example.bookworld.service;
 
 import com.example.bookworld.Models.DTO.BookModel;
 import com.example.bookworld.Models.DTO.CreateBookModel;
+import com.example.bookworld.Models.DTO.EditBookModel;
 import com.example.bookworld.Models.Entities.*;
 import com.example.bookworld.Models.Enums.ConditionType;
 import com.example.bookworld.repository.*;
@@ -61,5 +62,80 @@ public class BookService {
         List<BookModel> mappedBooks = Arrays.stream(modelBooks).toList();
 
         return mappedBooks;
+    }
+
+    public BookModel findBookById(Long id) {
+        Book book = this.bookRepository.findBookById(id);
+
+        BookModel bookToShow = modelMapper.map(book, BookModel.class);
+
+        if(bookToShow.getAuthor().getCountry() == null) {
+            bookToShow.getAuthor().setCountry("The Admin is in process of adding author's country. :)");
+        }
+
+        if(book.getAuthor().getBirthDate() == null) {
+            bookToShow.getAuthor().setBirthDate("The Admin is in process of adding author's birth date. :)");
+        }
+
+        return bookToShow;
+    }
+
+    public void deleteBook(Long id) {
+        this.bookRepository.deleteById(id);
+    }
+
+    public BookModel addCountryAndBirthDateToAuthor(Long id, EditBookModel editBookModel) {
+        Book book = this.bookRepository.findBookById(id);
+
+        String authorName = book.getAuthor().getName();
+        Author author = this.authorRepository.getAuthorByName(authorName);
+
+        author.setCountry(editBookModel.getCountry());
+        author.setBirthDate(editBookModel.getBirthDate());
+
+        this.authorRepository.saveAndFlush(author);
+
+        book.getAuthor().setCountry(editBookModel.getCountry());
+        book.getAuthor().setBirthDate(editBookModel.getBirthDate());
+
+        BookModel bookToShow = modelMapper.map(book, BookModel.class);
+
+//        bookToShow.getAuthor().setCountry(editBookModel.getCountry());
+//        book.getAuthor().setBirthDate(editBookModel.getBirthDate());
+
+        return bookToShow;
+    }
+
+
+    public void buyBook(Long id, String name) {
+        User buyer = this.userRepository.findByUsername(name);
+        Book book = this.bookRepository.findBookById(id);
+
+        book.setBuyer(buyer);
+        book.setSeller(null);
+        this.bookRepository.saveAndFlush(book);
+    }
+
+
+    public List<BookModel> getAllBooksWithoutBuyer(String name) {
+        User user = this.userRepository.findByUsername(name);
+        List<Book> booksBySellerIdNot = this.bookRepository.findBooksBySellerIdNot(user.getId());
+
+        BookModel[] mappedOffers = this.modelMapper.map(booksBySellerIdNot, BookModel[].class);
+
+        List<BookModel> otherBooks = Arrays.stream(mappedOffers).toList();
+
+        return otherBooks;
+    }
+
+    public List<BookModel> findMyBooks(String name) {
+        User user = this.userRepository.findByUsername(name);
+        List<Book> booksBySellerId = this.bookRepository.findBooksBySellerId(user.getId());
+
+        BookModel[] mappedBooks = this.modelMapper.map(booksBySellerId, BookModel[].class);
+
+        List<BookModel> myBooks = Arrays.stream(mappedBooks).toList();
+
+        return myBooks;
     }
 }

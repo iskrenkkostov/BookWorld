@@ -3,17 +3,22 @@ package com.example.bookworld.Models.DTO;
 import com.example.bookworld.Models.Entities.Genre;
 import com.example.bookworld.Models.Enums.ConditionType;
 import com.example.bookworld.Models.Enums.GenreType;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 public class CreateBookModel {
 
     @NotNull
+    @Size(min = 3)
     private String name;
 
     @NotNull
+    @Size(min = 5)
     private String author;
 
     @NotNull
+    @Min(5)
     private double price;
 
     @NotNull

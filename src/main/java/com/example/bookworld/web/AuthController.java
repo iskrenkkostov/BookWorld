@@ -46,5 +46,10 @@ public class AuthController {
         authService.registerUser(registerModel);
         return "login";
     }
+
+    @ModelAttribute(name = "registerModel")
+    public RegisterModel registerModel() {
+        return new RegisterModel();
+    }
 }
 

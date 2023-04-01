@@ -23,7 +23,7 @@ public class Author extends BaseEntity{
     private String country;
 
     @Column
-    private LocalDate birthDate;
+    private String birthDate;
 
     @OneToMany(mappedBy = "author")
     private List<Book> books;
@@ -31,7 +31,7 @@ public class Author extends BaseEntity{
     public Author() {
     }
 
-    public Author(String name, String country, LocalDate birthDate, List<Book> books) {
+    public Author(String name, String country, String birthDate, List<Book> books) {
         this.name = name;
         this.country = country;
         this.birthDate = birthDate;
@@ -54,11 +54,11 @@ public class Author extends BaseEntity{
         this.country = country;
     }
 
-    public LocalDate getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 

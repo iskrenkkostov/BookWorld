@@ -5,6 +5,8 @@ import com.example.bookworld.repository.UserRepository;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
@@ -17,5 +19,10 @@ public class UserService {
     public User getUserByUsername(String username) {
         return userRepository.findUserByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found!"));
+    }
+
+    public Optional<User> findUserByUsername(String name) {
+
+        return this.userRepository.findUserByUsername(name);
     }
 }

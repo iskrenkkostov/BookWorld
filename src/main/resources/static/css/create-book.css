@@ -120,12 +120,18 @@ body {
     border-radius: 12px;
 }
 
+small{
+    color: red;
+    height: auto;
+    max-height: 10px;
+}
+
 input{
     width: 70%;
     align-self: center;
     height: 36px;
     background-color: antiquewhite;
-    margin-bottom: 36px;
+    margin-bottom: 18px;
     border: none;
     border-radius: 12px;
 }
@@ -145,7 +151,7 @@ label{
 #genres{
     width: 70%;
     align-self: center;
-    margin-bottom: 36px;
+    margin-bottom: 18px;
     border: none;
     height: 36px;
     background-color: antiquewhite;
@@ -155,7 +161,7 @@ label{
 #conditions{
     width: 70%;
     align-self: center;
-    margin-bottom: 36px;
+    margin-bottom: 18px;
     border: none;
     height: 36px;
     background-color: antiquewhite;

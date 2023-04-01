@@ -2,10 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" th:href="@{/css/all-books.css}">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/my-book.css}">
     <link rel="stylesheet" th:href="@{/css/reset.css}">
 </head>
 <body>
@@ -41,20 +39,17 @@
 </nav>
 
 <div class="container">
-<ul class="book-list" th:each="book: ${books}">
-    <li>
-        <p th:text="${'Title: ' + book.name}" th:value="${book.name}"></p>
-        <p th:text="${'Genre: ' + book.genre.name}" th:value="${book.genre.name}"></p>
-        <p th:text="${'Title: ' + book.author.name}" th:value="${book.author.name}"></p>
-        <p th:text="${'Price: ' + book.price + ' $'}" th:value="${book.price}"></p>
+    <ul class="book-list" th:each="book: ${books}">
+        <li>
+            <p th:text="${'Title: ' + book.name}" th:value="${book.name}"></p>
+            <p th:text="${'Genre: ' + book.genre.name}" th:value="${book.genre.name}"></p>
+            <p th:text="${'Title: ' + book.author.name}" th:value="${book.author.name}"></p>
+            <p th:text="${'Price: ' + book.price + ' $'}" th:value="${book.price}"></p>
 
-        <span class="buttons" sec:authorize="isAuthenticated()">
-                        <a th:href="@{/books/{id}/buy (id=*{book.id})}" class="buy-btn btn" sec:authorize="hasRole('USER')">Buy</a>
-                        <a th:href="@{/books/{id}/delete (id=*{book.id})}" class="delete-btn btn" sec:authorize="hasRole('ADMIN')">Delete</a>
-                        </span>
-        <a th:href="@{/books/{id}/details (id=*{book.id})}" class="details-btn">Details</a>
-    </li>
-</ul>
+
+            <a th:href="@{/books/{id}/details (id=*{book.id})}" class="details-btn">Details</a>
+        </li>
+    </ul>
 </div>
 
 <footer>

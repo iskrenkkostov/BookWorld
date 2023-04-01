@@ -171,6 +171,14 @@ p{
     font-size: 20px;
 }
 
+.sell-books{
+    font-family: 'Capriola', cursive;
+    color: #52433c;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 18px;
+}
+
 .media{
     display: flex;
     flex-direction: row;
