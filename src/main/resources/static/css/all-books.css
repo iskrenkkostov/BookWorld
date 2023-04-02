@@ -131,6 +131,13 @@ body {
     text-align: center;
 }
 
+.welcome-msg{
+    margin-left: 40%;
+    font-family: 'IBM+Plex+Serif', cursive;
+    font-size: 24px;
+    color: #52433c;
+}
+
 .btn{
     font-family: 'IBM+Plex+Serif', cursive;
     border: none;

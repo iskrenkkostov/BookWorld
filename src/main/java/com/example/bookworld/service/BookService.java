@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -137,5 +138,11 @@ public class BookService {
         List<BookModel> myBooks = Arrays.stream(mappedBooks).toList();
 
         return myBooks;
+    }
+
+    public Optional<Book> getBookById(Long id) {
+        Optional<Book> bookById = this.bookRepository.getBookById(id);
+
+        return bookById;
     }
 }

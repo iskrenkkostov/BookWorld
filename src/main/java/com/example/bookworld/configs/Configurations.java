@@ -1,5 +1,6 @@
 package com.example.bookworld.configs;
 
+import com.example.bookworld.errorHandler.CustomAccessDeniedHandler;
 import com.example.bookworld.repository.UserRepository;
 import com.example.bookworld.service.UserDetailsServiceImpl;
 import com.example.bookworld.service.UserService;
@@ -14,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.AccessDeniedHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -37,11 +39,15 @@ public class Configurations {
                 authorizeHttpRequests().
                 requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().
                 requestMatchers("/", "/books/{id}/details").permitAll().
-                requestMatchers("/auth/register", "/auth/login", "/auth/login/error").anonymous().
+                requestMatchers("/auth/register", "/auth/login").anonymous().
                 requestMatchers("/books/{id}/delete", "/books/edit/{id}").hasRole("ADMIN").
                 requestMatchers("/profile", "/books/{id}/buy", "/books/getAll", "/profile/myBooks").authenticated().
+                requestMatchers("/access-denied").permitAll().
               //  requestMatchers("/books/{id}/details").authenticated().
                 requestMatchers("/books/create").authenticated().
+                //exception
+                and().
+                exceptionHandling().accessDeniedHandler(accessDeniedHandler()).
                // anyRequest().authenticated().
         and()
                 .formLogin()
@@ -65,6 +71,11 @@ public class Configurations {
 //        httpSecurity.authorizeHttpRequests().anyRequest().permitAll();
 
         return httpSecurity.build();
+    }
+
+    @Bean
+    public AccessDeniedHandler accessDeniedHandler() {
+        return new CustomAccessDeniedHandler();
     }
 
     @Bean

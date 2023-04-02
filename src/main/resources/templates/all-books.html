@@ -41,6 +41,8 @@
 </nav>
 
 <div class="container">
+    <span class="welcome-msg" sec:authorize="isAuthenticated()">Welcome to your book catalog, <span sec:authentication="name"></span> </span>
+
 <ul class="book-list" th:each="book: ${books}">
     <li>
         <p th:text="${'Title: ' + book.name}" th:value="${book.name}"></p>

@@ -3,7 +3,6 @@ package com.example.bookworld.web;
 import com.example.bookworld.Models.DTO.BookModel;
 import com.example.bookworld.Models.DTO.CreateBookModel;
 import com.example.bookworld.Models.DTO.EditBookModel;
-import com.example.bookworld.Models.Entities.User;
 import com.example.bookworld.service.*;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -62,7 +61,6 @@ public class BookController {
         }
 
 
-
         authorService.saveAuthor(createBookModel.getAuthor());
         bookService.createBookOffer(createBookModel, principal.getName());
 
@@ -101,7 +99,7 @@ public class BookController {
     }
 
     @PostMapping("/edit/{id}")
-    public String postEditAuthor(@PathVariable Long id,  @ModelAttribute(name = "editBookModel") EditBookModel editBookModel, Model model) {
+    public String postEditAuthor(@PathVariable Long id, @ModelAttribute(name = "editBookModel") EditBookModel editBookModel, Model model) {
 
         BookModel bookToShow = this.bookService.addCountryAndBirthDateToAuthor(id, editBookModel);
         model.addAttribute("book", bookToShow);
@@ -116,9 +114,11 @@ public class BookController {
 
     @GetMapping("/{id}/buy")
     public String buyBook(@PathVariable Long id, Principal principal) {
+
         this.bookService.buyBook(id, principal.getName());
 
         return "redirect:/books/getAll";
     }
 
 }
+
