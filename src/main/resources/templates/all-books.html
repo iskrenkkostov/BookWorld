@@ -39,9 +39,9 @@
         </li>
     </ul>
 </nav>
+<span class="welcome-msg" sec:authorize="isAuthenticated()">Welcome to your book catalog, <span sec:authentication="name"></span> </span>
 
 <div class="container">
-    <span class="welcome-msg" sec:authorize="isAuthenticated()">Welcome to your book catalog, <span sec:authentication="name"></span> </span>
 
 <ul class="book-list" th:each="book: ${books}">
     <li>

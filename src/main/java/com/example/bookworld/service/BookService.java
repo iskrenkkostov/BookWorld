@@ -145,4 +145,10 @@ public class BookService {
 
         return bookById;
     }
+
+    public List<Book> getAllBooksForScheduling() {
+        List<Book> allBooks = this.bookRepository.findAll();
+
+        return allBooks;
+    }
 }

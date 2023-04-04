@@ -196,3 +196,54 @@ footer {
 footer span {
     font-weight: bold;
 }
+
+@media (max-width: 1300px) {
+    body {
+        gap: 100px;
+        min-width: fit-content;
+
+    }
+
+    .nav{
+        display: flex;
+        flex-direction: column;
+        height: 150px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .list{
+        justify-content: center;
+        width: 100%;
+        padding: 0px;
+        gap: 32px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        flex-basis: 70%;
+        border: none;
+    }
+
+    .img-section{
+        display: flex;
+        flex-direction: column;
+        max-height: 60%;
+        flex-basis: 70%;
+        border-top: 2px solid black;
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+    }
+
+    .info-section{
+        flex-basis: 40%;
+        border: 2px solid black
+    }
+
+
+    footer{
+        position: unset;
+    }
+
+}

@@ -21,4 +21,10 @@ public class AuthorService {
             this.authorRepository.saveAndFlush(authorToSave);
         }
     }
+
+    public Author getAuthorByName(String name) {
+        Author author = this.authorRepository.getAuthorByName(name);
+
+        return author;
+    }
 }

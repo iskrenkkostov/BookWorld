@@ -196,11 +196,52 @@ footer {
     display: flex;
     justify-content: space-between;
     padding: 8px 64px;
-    position: fixed;
+
+    position: absolute;
     bottom: 0;
     width: 100%;
 }
 
 footer span {
     font-weight: bold;
+}
+
+@media (max-width: 1300px) {
+    body {
+        gap: 100px;
+        min-width: fit-content;
+
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        height: 150px;
+        justify-content: center;
+        text-align: center;
+        flex-basis: 30%;
+        min-width: 100%;
+    }
+
+    .list {
+        justify-content: center;
+        width: 100%;
+        padding: 0px;
+        gap: 32px;
+    }
+
+    .welcome-msg{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .container{
+        padding: 0;
+    }
+
+    .book-list {
+        padding-left: 0;
+    }
+
 }

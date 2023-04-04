@@ -298,3 +298,64 @@ footer {
 footer span {
     font-weight: bold;
 }
+
+
+@media (max-width: 1300px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    .nav{
+        display: flex;
+        flex-direction: column;
+        height: 150px;
+        justify-content: center;
+        text-align: center;
+        flex-basis: 30%;
+        min-width: 100%;
+    }
+
+    .list{
+        justify-content: center;
+        width: 100%;
+        padding: 0px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        max-height: 60%;
+        max-width: 80%;
+        flex-basis: 70%;
+        border: none;
+        margin-top: 100px;
+    }
+
+    .img-section{
+        flex-basis: 40%;
+        border-top: 2px solid black;
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+    }
+
+    .register-section{
+        flex-basis: 60%;
+        padding: 0px;
+        border-bottom: 2px solid black;
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+        margin-bottom: 200px;
+    }
+
+    .registered{
+        padding-top: 0px;
+        gap: 50px;
+    }
+
+    footer{
+        position: unset;
+        gap: 32px;
+    }
+}
