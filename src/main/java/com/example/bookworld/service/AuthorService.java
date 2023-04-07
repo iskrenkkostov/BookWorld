@@ -17,7 +17,9 @@ public class AuthorService {
     public void saveAuthor(String author) {
         Author authorToSave = new Author(author, null, null, new ArrayList<>());
 
-        if(authorRepository.getAuthorByName(author) == null) {
+        Author authorFromDb = authorRepository.getAuthorByName(author);
+
+        if(authorFromDb == null) {
             this.authorRepository.saveAndFlush(authorToSave);
         }
     }

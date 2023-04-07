@@ -54,7 +54,7 @@ public class Configurations {
                 .loginPage("/auth/login")
                 .usernameParameter("username")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/", true)
+                .defaultSuccessUrl("/")
                 .failureUrl("/users/login?error=true")
                 .and()
                 .logout()

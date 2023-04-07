@@ -74,7 +74,7 @@ public class BookService {
             bookToShow.getAuthor().setCountry("The Admin is in process of adding author's country. :)");
         }
 
-        if(book.getAuthor().getBirthDate() == null) {
+        if(bookToShow.getAuthor().getBirthDate() == null) {
             bookToShow.getAuthor().setBirthDate("The Admin is in process of adding author's birth date. :)");
         }
 
